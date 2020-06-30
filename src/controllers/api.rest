@@ -8,6 +8,6 @@ GET {{baseUrl}}/auth/sign-up
 Content-Type: {{contentType}}
 
 {
-  "email":"ryan1@gmail.com",
+  "email":"ryan53@gmail.com",
   "password":"123456"
 }
