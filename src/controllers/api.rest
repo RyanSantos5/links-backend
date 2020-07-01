@@ -8,6 +8,7 @@ GET {{baseUrl}}/auth/sign-up
 Content-Type: {{contentType}}
 
 {
-  "email":"ryan53@gmail.com",
-  "password":"123456"
+  "email":"nb6tg6@ujhgbfe.com",
+  "password":"12345",
+  "password_confirmation": "12345"
 }
