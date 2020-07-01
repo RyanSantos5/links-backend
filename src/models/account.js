@@ -9,6 +9,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNULL: false,
     },
+    jwtVersion: {
+      type: DataTypes.STRING,
+      allowNULL: false,
+      defaultValue: 0,
+    },
   });
 
   Account.associate = (models) => {
