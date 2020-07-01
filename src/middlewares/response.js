@@ -62,7 +62,7 @@ const response = (req, res, next) => {
 
   res.jsonOK = jsonOK;
   res.jsonBadRequest = jsonBadRequest;
-  res.jsonUnjsonUnathorized =jsonUnathorized;
+  res.jsonUnathorized =jsonUnathorized;
   res.jsonNotFound = jsonNotFound;
   res.jsonServerError = jsonServerError;
 

@@ -1,6 +1,8 @@
 @baseUrl = http://localhost:3001
 @contentType = application/json
 
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNTkzNjA5Mjg0LCJleHAiOjE1OTM2MTEwODR9.HleB26pEJaJcuSkpASTZlY2x6fs7G_5mStwE-iiZSfI
+
 
 
 ###Create Account
@@ -8,7 +10,7 @@ POST {{baseUrl}}/auth/sign-up
 Content-Type: {{contentType}}
 
 {
-  "email":"nb6thjjj3g6@ujhgbfe.com",
+  "email":"ryan@gmail.com",
   "password":"12345",
   "password_confirmation": "12345"
 }
@@ -18,13 +20,14 @@ POST  {{baseUrl}}/auth/sign-in
 Content-Type: {{contentType}}
 
 {
-  "email":"nb6thjjj3g6@ujhgbfe.com",
-  "password":"12345"
+  "email":"ryan@gmail.com",
+  "password":"123456"
 }
 
 ### List links
 GET {{baseUrl}}/link
 Content-Type: {{contentType}}
+Authorization: Bearer {{token}}
 
 
 ### CREATE links
