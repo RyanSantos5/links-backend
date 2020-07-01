@@ -21,3 +21,37 @@ Content-Type: {{contentType}}
   "email":"nb6thjjj3g6@ujhgbfe.com",
   "password":"12345"
 }
+
+### List links
+GET {{baseUrl}}/link
+Content-Type: {{contentType}}
+
+
+### CREATE links
+POST  {{baseUrl}}/link
+Content-Type: {{contentType}}
+
+{
+  "label": "Meu site445555",
+  "url": "https://ryan.com",
+  "isSocial": false
+}
+
+### Get a link by id
+GET {{baseUrl}}/link/1
+Content-Type: {{contentType}}
+
+
+### EDITAR Link
+PUT   {{baseUrl}}/link/1
+Content-Type: {{contentType}}
+
+{
+  "label": "Meu novo site",
+  "url": "www.facebook.com",
+  "isSocial": true
+}
+
+### DELETE Link
+DELETE    {{baseUrl}}/link/4
+Content-Type: {{contentType}}
