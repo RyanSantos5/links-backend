@@ -1,7 +1,8 @@
 @baseUrl = http://localhost:3001
 @contentType = application/json
 
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNTkzNjE4MDA2LCJleHAiOjE1OTM2MTk4MDZ9.SCPqfqMbpKpxcPmx03zrTqhV_YAfaXI2dJuz_rmSpI4
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsInZlcnNpb24iOjAsImlhdCI6MTU5MzYyNTQ1MywiZXhwIjoxNTk2MjE3NDUzfQ.Pj7KkPS8kxARJvy5z6aPUb6xraqT2_uu3gobQiOgF8Y
+@refreshToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsInZlcnNpb24iOjAsImlhdCI6MTU5MzYyNTk3MSwiZXhwIjoxNTk2MjE3OTcxfQ.rB4Q2cgoeyb2Rb8tlR_-xsQSjgNNaLgjOkHO5vUo6fI
 
 
 
@@ -10,7 +11,7 @@ POST {{baseUrl}}/auth/sign-up
 Content-Type: {{contentType}}
 
 {
-  "email":"ryan@gmail.com",
+  "email":"ryan19@gmail.com",
   "password":"12345",
   "password_confirmation": "12345"
 }
@@ -20,9 +21,14 @@ POST  {{baseUrl}}/auth/sign-in
 Content-Type: {{contentType}}
 
 {
-  "email":"ryan@gmail.com",
-  "password":"123456"
+  "email":"ryan12@gmail.com",
+  "password":"12345"
 }
+
+### Refrsh
+POST  {{baseUrl}}/auth/refresh
+Content-Type: {{contentType}}
+Authorization: Bearer {{refreshToken}}
 
 ### List links
 GET {{baseUrl}}/link

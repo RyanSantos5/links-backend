@@ -1,4 +1,4 @@
-const {verifyJwt} = require('../helpers/jwt');
+const {verifyJwt, getTokenFromHeaders} = require('../helpers/jwt');
 
 const checkJwt = (req, res, next) => {
   // /auth/sign-in
@@ -7,19 +7,20 @@ const checkJwt = (req, res, next) => {
   // const adminsPaths = ['/auth/admin'];
   const {url: path} = req;
 
-  const excludedPaths = ['/auth/sign-in','/auth/sign-up'];
+  const excludedPaths = ['/auth/sign-in','/auth/sign-up','/auth/refresh'];
   const isExcluded = !!excludedPaths.find(p => p.startsWith(path));
 
   console.log(path , isExcluded);
   
   if(isExcluded) return next();
 
-  let token = req.headers['authorization'];
-  token = token ? token.slice(7,token.length) : null;
+  //Pegando o Refresh token
+  const token = getTokenFromHeaders(req.headers);
   if(!token) {
     return res.jsonUnathorized(null, 'Invalid token');
   }
   
+  // Verificando  se o token é valido e concede acesso
   try {
     const decoded = verifyJwt(token);
     req.accountId = decoded.id;
